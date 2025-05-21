@@ -1,7 +1,7 @@
 [versions]
-agp = "8.5.0"
+agp = "8.6.0"
 kotlin = "1.9.0"
-coreKtx = "1.13.1"
+coreKtx = "1.16.0"
 junit = "4.14-SNAPSHOT"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -10,6 +10,8 @@ activityCompose = "1.9.3"
 composeBom = "2024.04.01"
 appcompat = "1.7.0"
 material = "1.12.0"
+sdkVersion = "2.3.1"
+desugar_jdk_libs = "2.1.5"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -28,6 +30,10 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+onetap-compose = { module = "com.vk.id:onetap-compose", version.ref = "sdkVersion" }
+vk-sdk-support = { module = "com.vk.id:vk-sdk-support", version.ref = "sdkVersion" }
+vkid = { module = "com.vk.id:vkid", version.ref = "sdkVersion" }
+desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

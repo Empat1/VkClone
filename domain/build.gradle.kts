@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "ru.empat1.domain"
-    compileSdk = 34
+    compileSdk = 35
 
 
     buildTypes {
