@@ -31,11 +31,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.empat1.presentation.R
-import ru.empat1.presentation.ui.fragment.main.MainViewModel
+import ru.empat1.presentation.ui.fragment.main.InstagramViewModel
 
 @Composable
 fun InstagramProfileCard(
-    viewModel: MainViewModel
+    viewModel: InstagramViewModel
 ) {
     val isFollowed = viewModel.isFollowing.observeAsState(false)
 
