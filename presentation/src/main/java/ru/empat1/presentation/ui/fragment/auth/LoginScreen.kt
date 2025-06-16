@@ -36,12 +36,12 @@ fun LoginScreen() {
         )
 
         Spacer(Modifier.size(100.dp))
-        registationButton()
+        RegistrationButton()
     }
 }
 
 @Composable
-private fun registationButton(){
+private fun RegistrationButton(){
     OneTap(
         onAuth = { oAuth, token ->
             Log.d("LoginScreen", "token: ${token.token}")
