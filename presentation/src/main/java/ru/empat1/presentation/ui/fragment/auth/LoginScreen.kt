@@ -17,9 +17,10 @@ import com.vk.id.auth.VKIDAuthUiParams
 import com.vk.id.onetap.compose.onetap.OneTap
 import com.vk.id.onetap.compose.onetap.OneTapTitleScenario
 import ru.empat1.presentation.R
+import ru.empat1.presentation.VkViewModel
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(viewModel: VkViewModel) {
 
     Column(
         modifier = Modifier
@@ -36,15 +37,16 @@ fun LoginScreen() {
         )
 
         Spacer(Modifier.size(100.dp))
-        RegistrationButton()
+        RegistrationButton(viewModel)
     }
 }
 
 @Composable
-private fun RegistrationButton(){
+private fun RegistrationButton(viewModel: VkViewModel){
     OneTap(
         onAuth = { oAuth, token ->
             Log.d("LoginScreen", "token: ${token.token}")
+            viewModel.saveToken(token)
         },
         onFail = { oAuth, fail ->
             Log.d("LoginScreen", "token: ${fail.description}")
@@ -52,7 +54,7 @@ private fun RegistrationButton(){
         authParams = VKIDAuthUiParams {
             scopes = setOf("wall", "email", "phone_number", "friends")
         },
-        scenario = OneTapTitleScenario.SignUp,
+        scenario = OneTapTitleScenario.SignIn,
         signInAnotherAccountButtonEnabled = true,
     )
 }

@@ -56,6 +56,8 @@ dependencies {
     coreLibraryDesugaring(libs.desugar.jdk.libs)
     implementation (libs.vk.sdk.support)
     implementation (libs.vkid)
+    implementation (libs.android.sdk.core)
+    implementation (libs.android.sdk.api)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
